@@ -985,3 +985,37 @@ sudoku.c:130:5: error: control reaches end of non-void function [-Werror=return-
      ^
 cc1.exe: all warnings being treated as errors
 2ea8438
+Fri, May 16, 2025 11:58:02 PM: 
+ sudoku.c | 1 -
+ 1 file changed, 1 deletion(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:123:36: error: 'current' undeclared (first use in this function)
+     List* nodosADJ = get_adj_nodes(current);
+                                    ^~~~~~~
+sudoku.c:123:36: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c: At top level:
+sudoku.c:133:3: error: data definition has no type or storage class [-Werror]
+   free(stack);
+   ^~~~
+sudoku.c:133:3: error: type defaults to 'int' in declaration of 'free' [-Werror=implicit-int]
+sudoku.c:133:3: error: parameter names (without types) in function declaration [-Werror]
+sudoku.c:133:3: error: conflicting types for 'free'
+In file included from test.c:2:0:
+c:\mingw\include\stdlib.h:487:39: note: previous declaration of 'free' was here
+ _CRTIMP __cdecl __MINGW_NOTHROW  void free (void *);
+                                       ^~~~
+In file included from test.c:5:0:
+sudoku.c:134:3: error: expected identifier or '(' before 'return'
+   return NULL;
+   ^~~~~~
+sudoku.c:135:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+sudoku.c: In function 'DFS':
+sudoku.c:132:3: error: control reaches end of non-void function [-Werror=return-type]
+   }
+   ^
+cc1.exe: all warnings being treated as errors
+b3c8fa4
