@@ -430,3 +430,25 @@ sudoku.c:116:75: error: 'Node {aka struct <anonymous>}' has no member named 'nex
      for(Node* current = nodosADJ->head; current != NULL; current = current->next){
                                                                            ^~
 33ed618
+Fri, May 16, 2025 11:03:33 PM: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:109:18: error: void value not ignored as it ought to be
+     Node* temp = pop(stack);
+                  ^~~
+sudoku.c:116:9: error: unknown type name 'node'
+     for(node* current = nodosADJ->first; current != NULL; current = current->next){
+         ^~~~
+sudoku.c:116:33: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+     for(node* current = nodosADJ->first; current != NULL; current = current->next){
+                                 ^~
+sudoku.c:116:76: error: request for member 'next' in something not a structure or union
+     for(node* current = nodosADJ->first; current != NULL; current = current->next){
+                                                                            ^~
+sudoku.c:117:25: error: request for member 'data' in something not a structure or union
+       push(stack,current->data);
+                         ^~
+a3edc77
