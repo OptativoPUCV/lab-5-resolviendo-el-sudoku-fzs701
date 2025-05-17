@@ -515,3 +515,33 @@ sudoku.c:120:10: error: 'current' undeclared (first use in this function)
           ^~~~~~~
 cc1.exe: all warnings being treated as errors
 9fb53db
+Fri, May 16, 2025 11:06:38 PM: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:109:18: error: void value not ignored as it ought to be
+     Node* temp = pop(stack);
+                  ^~~
+sudoku.c:116:9: error: unknown type name 'node'
+     for(node* current = nodosADJ->first; current != NULL; current = current->next){
+         ^~~~
+sudoku.c:116:33: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+     for(node* current = nodosADJ->first; current != NULL; current = current->next){
+                                 ^~
+sudoku.c:116:76: error: request for member 'next' in something not a structure or union
+     for(node* current = nodosADJ->first; current != NULL; current = current->next){
+                                                                            ^~
+sudoku.c:117:38: error: request for member 'data' in something not a structure or union
+       Node* adjNode = (Node*) current->data;
+                                      ^~
+sudoku.c:118:18: error: 'adjNote' undeclared (first use in this function)
+       push(stack,adjNote);
+                  ^~~~~~~
+sudoku.c:118:18: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:117:13: error: unused variable 'adjNode' [-Werror=unused-variable]
+       Node* adjNode = (Node*) current->data;
+             ^~~~~~~
+cc1.exe: all warnings being treated as errors
+99c2bc7

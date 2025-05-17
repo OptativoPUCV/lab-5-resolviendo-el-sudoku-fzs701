@@ -117,7 +117,7 @@ Node* DFS(Node* initial, int* cont){
       Node* adjNode = (Node*) current->data;
       push(stack,adjNote);
     }
-    free(current);
+    free(temp);
   }
   return NULL;
 }
