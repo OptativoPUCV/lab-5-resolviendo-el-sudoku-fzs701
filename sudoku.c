@@ -71,6 +71,16 @@ int is_valid(Node* n){
     for(int j = 0; j < 9; j++){
       if (n->sudo[i][j] != 0){
         int num = n->sudo[i][j];
+
+        if(fila[num]) return 0;
+        fila[num] = 1;
+        
+        if(colum[num]) return 0;
+        colum[num] = 1;
+
+        int submatriz = (i / 3) * 3 + (j / 3);
+        if (box[submatriz]) return 0;
+        box[submatriz] = 1;
       }
     }
   }
