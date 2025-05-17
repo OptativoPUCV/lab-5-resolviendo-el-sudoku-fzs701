@@ -102,7 +102,7 @@ int is_final(Node* n){
   }
     return 1;
 }
-/*Node* DFS(Node* initial, int* cont){
+Node* DFS(Node* initial, int* cont){
   Stack* stack = createStack();
   push(stack,initial);
   *cont = 0;
@@ -127,7 +127,8 @@ int is_final(Node* n){
 
     while(adjNode != NULL){
       if (is_valid(adjNode)){
-        push(stack,adjNode);
+        Node* copyNode = copy(adjNode);
+        push(stack,copyNode);
       } else {
         free(adjNode);
       }
@@ -138,42 +139,6 @@ int is_final(Node* n){
   }
   free(stack);
   return NULL;
-}*/
-Node* DFS(Node* initial, int* cont) {
-    Stack* stack = createStack();
-    push(stack, initial);
-    *cont = 0;
-
-    while (!is_empty(stack)) {
-        (*cont)++;
-        Node* current = (Node*)front(stack);
-        pop(stack);
-
-        if (is_final(current)) {
-            // Limpiar el stack antes de retornar
-            while (!is_empty(stack)) {
-                Node* temp = (Node*)front(stack);
-                pop(stack);
-                free(temp);
-            }
-            free(stack);
-            return current;  // Retorna la solución
-        }
-
-        List* adj_nodes = get_adj_nodes(current);
-        Node* adj_node = first(adj_nodes);
-
-        while (adj_node != NULL) {
-            push(stack, adj_node);  // **Ya sabemos que son válidos (get_adj_nodes los filtró)**
-            adj_node = next(adj_nodes);
-        }
-
-        free(current);       // Liberar el nodo actual (ya procesado)
-        free(adj_nodes);     // Liberar la lista (sus nodos ya están en el stack)
-    }
-
-    free(stack);
-    return NULL;  // No se encontró solución
 }
 
 
