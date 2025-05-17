@@ -106,14 +106,15 @@ Node* DFS(Node* initial, int* cont){
   *cont = 0;
 
   while(!is_empty(stack)){
-    Node* temp = (Node*)pop(stack);
+    Node* temp = (Node*)top(stack);
+    pop(stack);
     (*cont)++;
 
     if(is_final(temp)){
       return temp;
     }
     List* nodosADJ = get_adj_nodes(temp);
-    for(List* current = nodosADJ->first; current != NULL; current = current->next){
+    for(List* current = nodosADJ; current != NULL; current = current->next){
       Node* adjNode = current->data->head;
       push(stack,adjNote);
     }

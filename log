@@ -719,3 +719,21 @@ sudoku.c:117:13: error: unused variable 'adjNode' [-Werror=unused-variable]
              ^~~~~~~
 cc1.exe: all warnings being treated as errors
 e0022c8
+Fri, May 16, 2025 11:21:31 PM: 
+ sudoku.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:117:69: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+     for(List* current = nodosADJ; current != NULL; current = current->next){
+                                                                     ^~
+sudoku.c:119:18: error: 'adjNote' undeclared (first use in this function)
+       push(stack,adjNote);
+                  ^~~~~~~
+sudoku.c:119:18: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:118:13: error: unused variable 'adjNode' [-Werror=unused-variable]
+       Node* adjNode = current->data->head;
+             ^~~~~~~
+cc1.exe: all warnings being treated as errors
+b527231
