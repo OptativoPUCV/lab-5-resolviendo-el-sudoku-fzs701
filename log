@@ -926,3 +926,62 @@ Fri, May 16, 2025 11:54:44 PM:
  tests:  6|2
 total_score: 45/70
 a53c5e5
+Fri, May 16, 2025 11:57:54 PM: 
+ sudoku.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:123:36: error: 'current' undeclared (first use in this function)
+     List* nodosADJ = get_adj_nodes(current);
+                                    ^~~~~~~
+sudoku.c:123:36: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c: At top level:
+sudoku.c:131:5: error: data definition has no type or storage class [-Werror]
+     free(nodosADJ);
+     ^~~~
+sudoku.c:131:5: error: type defaults to 'int' in declaration of 'free' [-Werror=implicit-int]
+sudoku.c:131:5: error: parameter names (without types) in function declaration [-Werror]
+sudoku.c:131:5: error: conflicting types for 'free'
+In file included from test.c:2:0:
+c:\mingw\include\stdlib.h:487:39: note: previous declaration of 'free' was here
+ _CRTIMP __cdecl __MINGW_NOTHROW  void free (void *);
+                                       ^~~~
+In file included from test.c:5:0:
+sudoku.c:132:5: error: data definition has no type or storage class [-Werror]
+     free(current);
+     ^~~~
+sudoku.c:132:5: error: type defaults to 'int' in declaration of 'free' [-Werror=implicit-int]
+sudoku.c:132:5: error: parameter names (without types) in function declaration [-Werror]
+sudoku.c:132:5: error: conflicting types for 'free'
+In file included from test.c:2:0:
+c:\mingw\include\stdlib.h:487:39: note: previous declaration of 'free' was here
+ _CRTIMP __cdecl __MINGW_NOTHROW  void free (void *);
+                                       ^~~~
+In file included from test.c:5:0:
+sudoku.c:133:3: error: expected identifier or '(' before '}' token
+   }
+   ^
+sudoku.c:134:3: error: data definition has no type or storage class [-Werror]
+   free(stack);
+   ^~~~
+sudoku.c:134:3: error: type defaults to 'int' in declaration of 'free' [-Werror=implicit-int]
+sudoku.c:134:3: error: parameter names (without types) in function declaration [-Werror]
+sudoku.c:134:3: error: conflicting types for 'free'
+In file included from test.c:2:0:
+c:\mingw\include\stdlib.h:487:39: note: previous declaration of 'free' was here
+ _CRTIMP __cdecl __MINGW_NOTHROW  void free (void *);
+                                       ^~~~
+In file included from test.c:5:0:
+sudoku.c:135:3: error: expected identifier or '(' before 'return'
+   return NULL;
+   ^~~~~~
+sudoku.c:136:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+sudoku.c: In function 'DFS':
+sudoku.c:130:5: error: control reaches end of non-void function [-Werror=return-type]
+     }
+     ^
+cc1.exe: all warnings being treated as errors
+2ea8438

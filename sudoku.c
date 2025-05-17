@@ -110,21 +110,25 @@ Node* DFS(Node* initial, int* cont){
     pop(stack);
 
     if(is_final(current)){
+      while (!is_empty(stack)) {
+        Node* temp = (Node*)front(stack);
+        pop(stack);
+        free(temp);
+      }
       free(stack);
       return current;
     }
+    }
 
     List* nodosADJ = get_adj_nodes(current);
-    Node* adjNode = (Node*)front(nodosADJ);
+    Node* adjNode = first(nodosADJ);
 
     while(adjNode != NULL){
-      if(is_valid(adjNode)){
-        Node* newNodo = copy(adjNode);
-        push(stack,newNodo);
-      } 
-      adjNode = (Node*)next(nodosADJ);
+      push(stack,adjNode);
+      adjNode = next(nodosADJ);
+    } 
     }
-    clean(nodosADJ);
+    free(nodosADJ);
     free(current);
   }
   free(stack);
