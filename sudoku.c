@@ -114,10 +114,10 @@ Node* DFS(Node* initial, int* cont){
     }
     List* nodosADJ = get_adj_nodes(temp);
 
-    Node* adjacenteNodo;
-    for(int i = 0; i < size(nodosADJ); i++){
-      adjacenteNodo = getAT(nodosADJ,i);
+    Node* adjacenteNodo = nodosADJ->head;
+    while (adjacenteNodo != NULL){
       push(stack,adjacenteNodo);
+      adjacenteNodo = adjacenteNodo->next;
     }
     free(temp);
   }
