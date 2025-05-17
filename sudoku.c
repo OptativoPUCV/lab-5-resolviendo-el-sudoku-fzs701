@@ -53,27 +53,12 @@ int is_valid(Node* n){
       int num = n->sudo[i][j];
       if(num != 0){
         int submatriz = (i / 3) * 3 + (j / 3);
-        if(fila[i][num] || colum[i][num] || box[submatriz][num]){
+        if(fila[i][num] || colum[j][num] || box[submatriz][num]){
           return 0;
         }
         fila[i][num] = 1;
-        colum[i][num] = 1;
+        colum[j][num] = 1;
         box[submatriz][num] = 1;
-        /*if(fila[num] == 1) {
-          return 0;
-        }
-        fila[num] = 1;
-        
-        if(colum[num] == 1){
-          return 0;
-        } 
-        colum[num] = 1;
-
-        int submatriz = (i / 3) * 3 + (j / 3);
-        if (box[submatriz] == 1){
-          return 0;
-        } 
-        box[submatriz] = 1;*/
       }
     }
   }
@@ -95,7 +80,7 @@ List* get_adj_nodes(Node* n){
               free(newNode);
             }
           }
-          return list;
+          
         }
       }
     }
