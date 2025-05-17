@@ -197,3 +197,9 @@ sudoku.c:55:13: error: variable 'submatriz' set but not used [-Werror=unused-but
              ^~~~~~~~~
 cc1.exe: all warnings being treated as errors
 aabfc75
+Fri, May 16, 2025 10:30:31 PM: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|2
+total_score: 45/70
+0583006
