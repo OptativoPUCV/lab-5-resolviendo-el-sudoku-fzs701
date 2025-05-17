@@ -57,7 +57,7 @@ List* get_adj_nodes(Node* n){
             Node *newNode = copy(n);
             newNode->sudo[i][j] = dato;
             if (is_valid(newNode)){
-              addToList(list,newNode);
+              pushBack(list,newNode);
             } else {
               free(newNode);
             }
