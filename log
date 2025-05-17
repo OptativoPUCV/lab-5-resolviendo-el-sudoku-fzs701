@@ -179,3 +179,21 @@ Fri, May 16, 2025 10:25:15 PM:
  tests:  0|5
 total_score: 0/70
 713c85d
+Fri, May 16, 2025 10:29:56 PM: 
+ sudoku.c | 17 ++++++++++++-----
+ 1 file changed, 12 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'is_valid':
+sudoku.c:49:11: error: expected expression before '[' token
+   int box[[9]10] = {0};
+           ^
+sudoku.c:56:45: error: 'box' undeclared (first use in this function)
+         if(fila[i][num] || colum[i][num] || box[submatriz][num]){
+                                             ^~~
+sudoku.c:56:45: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:55:13: error: variable 'submatriz' set but not used [-Werror=unused-but-set-variable]
+         int submatriz = (i / 3) * 3 + (j / 3);
+             ^~~~~~~~~
+cc1.exe: all warnings being treated as errors
+aabfc75
