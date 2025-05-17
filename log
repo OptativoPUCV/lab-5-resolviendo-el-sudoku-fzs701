@@ -835,3 +835,21 @@ Fri, May 16, 2025 11:38:46 PM:
  tests:  6|2
 total_score: 45/70
 03a5b81
+Fri, May 16, 2025 11:42:44 PM: 
+ sudoku.c | 46 ++++++++++------------------------------------
+ 1 file changed, 10 insertions(+), 36 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:114:36: error: 'temp' undeclared (first use in this function)
+     List* nodosADJ = get_adj_nodes(temp);
+                                    ^~~~
+sudoku.c:114:36: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:120:5: error: implicit declaration of function 'cean' [-Werror=implicit-function-declaration]
+     cean(nodosADJ)
+     ^~~~
+sudoku.c:121:5: error: expected ';' before 'free'
+     free(current);
+     ^~~~
+cc1.exe: all warnings being treated as errors
+5c0fae6

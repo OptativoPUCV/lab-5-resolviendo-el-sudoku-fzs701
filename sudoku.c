@@ -99,55 +99,29 @@ int is_final(Node* n){
   }
     return 1;
 }
-/*Node* DFS(Node* initial, int* cont){
+Node* DFS(Node* initial, int* cont){
   Stack* stack = createStack();
   push(stack,initial);
-  *cont = 0;
 
   while(!is_empty(stack)){
-    Node* temp = (Node*)top(stack);
+    Node* current = front(stack);
     pop(stack);
     (*cont)++;
 
-    if(is_final(temp)){
-      return temp;
+    if(is_final(current)){
+      return current;
     }
     List* nodosADJ = get_adj_nodes(temp);
-    for(Node* current = nodosADJ->first; current != NULL; current = current->next){
-      //Node* adjNode = (Node*)current->data;
-      push(stack,current->data);
+    Node* adjNode = front(nodosADJ);
+    while(nodosADJ != NULL){
+      push(stack,adjNode);
+      adjNode = next(nodosADJ);
     }
-    free(temp);
+    cean(nodosADJ)
+    free(current);
   }
   return NULL;
-}*/
-Node* DFS(Node* n, int* cont) {
-    Stack* stack = createStack();
-    push(stack, n); // Colocar el nodo inicial en el stack
-
-    while (!is_empty(stack)) {
-        Node* current = front(stack); // Obtener el primer nodo del stack
-        pop(stack); // Eliminar el nodo del stack
-        (*cont)++; // Contabilizar la iteración
-
-        if (is_final(current)) {
-            return current; // Si es el nodo final, retornamos el nodo
-        }
-
-        List* adj_nodes = get_adj_nodes(current); // Obtener nodos adyacentes
-        Node* adj_node = front(adj_nodes);
-        while (adj_node != NULL) {
-            push(stack, adj_node); // Agregar nodos adyacentes al stack
-            adj_node = next(adj_nodes);
-        }
-
-        clean(adj_nodes); // Limpiar la lista de nodos adyacentes
-        free(current); // Liberar la memoria del nodo procesado
-    }
-
-    return NULL; // Si no se encuentra solución
 }
-
 
 
 
