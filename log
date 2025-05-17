@@ -107,3 +107,28 @@ Fri, May 16, 2025 10:11:46 PM:
  tests:  0|5
 total_score: 0/70
 d1099f5
+Fri, May 16, 2025 10:17:59 PM: 
+ sudoku.c | 15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'is_valid':
+sudoku.c:51:7: error: redeclaration of 'fila' with no linkage
+   int fila[10], colum[10], box[10];
+       ^~~~
+sudoku.c:47:7: note: previous definition of 'fila' was here
+   int fila[10] = {0};
+       ^~~~
+sudoku.c:51:17: error: redeclaration of 'colum' with no linkage
+   int fila[10], colum[10], box[10];
+                 ^~~~~
+sudoku.c:48:7: note: previous definition of 'colum' was here
+   int colum[10] = {0};
+       ^~~~~
+sudoku.c:51:28: error: redeclaration of 'box' with no linkage
+   int fila[10], colum[10], box[10];
+                            ^~~
+sudoku.c:49:7: note: previous definition of 'box' was here
+   int box[10] = {0};
+       ^~~
+3d11799
