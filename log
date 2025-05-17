@@ -132,3 +132,9 @@ sudoku.c:49:7: note: previous definition of 'box' was here
    int box[10] = {0};
        ^~~
 3d11799
+Fri, May 16, 2025 10:18:46 PM: 
+ sudoku.c | 2 --
+ 1 file changed, 2 deletions(-)
+ tests:  0|5
+total_score: 0/70
+515807a

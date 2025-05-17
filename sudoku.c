@@ -47,8 +47,6 @@ int is_valid(Node* n){
   int fila[10] = {0};
   int colum[10] = {0};
   int box[10] = {0};
-
-  int fila[10], colum[10], box[10];
   for(int i = 0; i < 9; i++){
     for(int j = 0; j < 9; j++){
       int num = n->sudo[i][j];
