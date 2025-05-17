@@ -121,36 +121,38 @@ int is_final(Node* n){
   }
   return NULL;
 }*/
-Node* DFS(Node* initial, int* cont){
-  Stack* stack = createStack();
-  push(stack,initial);
-  *cont = 0;
+Node* DFS(Node* n, int* cont) {
+    Stack* stack = createStack();
+    push(stack, n); // Colocar el nodo inicial en el stack
 
-  while(!is_empty(stack)){
-    (*cont)++;
-    Node* current = top(stack);
-    pop(stack);
+    while (!is_empty(stack)) {
+        Node* current = front(stack); // Obtener el primer nodo del stack
+        pop(stack); // Eliminar el nodo del stack
+        (*cont)++; // Contabilizar la iteración
 
-    if(is_final(current)){
-      free(stack);
-      return current;
+        if (is_final(current)) {
+            return current; // Si es el nodo final, retornamos el nodo
+        }
+
+        List* adj_nodes = get_adj_nodes(current); // Obtener nodos adyacentes
+        Node* adj_node = front(adj_nodes);
+        while (adj_node != NULL) {
+            push(stack, adj_node); // Agregar nodos adyacentes al stack
+            adj_node = next(adj_nodes);
+        }
+
+        clean(adj_nodes); // Limpiar la lista de nodos adyacentes
+        free(current); // Liberar la memoria del nodo procesado
     }
-    List* nodosADJ = get_adj_nodes(current);
-    Node* child = first(nodosADJ);
-    while(child != NULL){
-      push(stack,child);
-      child = next(nodosADJ);
-    }
-    free(current);
-  }
-  free(stack);
-  return NULL;
+
+    return NULL; // Si no se encuentra solución
 }
 
 
 
 
-int main( int argc, char *argv[] ){
+
+/*int main( int argc, char *argv[] ){
 
   Node* initial= read_file("s12a.txt");;
 
@@ -160,4 +162,4 @@ int main( int argc, char *argv[] ){
   print_node(final);
 
   return 0;
-}
+}*/
