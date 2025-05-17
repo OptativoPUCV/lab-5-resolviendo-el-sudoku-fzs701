@@ -105,11 +105,12 @@ Node* DFS(Node* initial, int* cont){
   *cont = 0;
 
   while(!is_empty(stack)){
+    (*cont)++;
     Node* current = (Node*)front(stack);
     pop(stack);
-    (*cont)++;
 
     if(is_final(current)){
+      free(stack);
       return current;
     }
 
@@ -120,14 +121,13 @@ Node* DFS(Node* initial, int* cont){
       if(is_valid(adjNode)){
         Node* newNodo = copy(adjNode);
         push(stack,newNodo);
-      } else {
-        free(adjNode);
-      }
+      } 
       adjNode = (Node*)next(nodosADJ);
     }
     clean(nodosADJ);
     free(current);
   }
+  free(stack);
   return NULL;
 }
 
