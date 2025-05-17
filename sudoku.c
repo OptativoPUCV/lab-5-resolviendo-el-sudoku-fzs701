@@ -44,13 +44,23 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
     return 1;
 }
 
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
+    for(int i = 0; i < 9; i++){
+      for(int j = 0; j < 9; j++){
+        if(n->sudo[i][j] == 0) {
+          for(int dato = 1; dato <= 9; dato++){
+            Node *newNode = copy(n);
+            newNode->sudo[i][j] = dato;
+            
+          }
+        }
+      }
+    }
     return list;
 }
 
@@ -65,8 +75,8 @@ Node* DFS(Node* initial, int* cont){
 
 
 
-/*
-int main( int argc, char *argv[] ){
+
+/*int main( int argc, char *argv[] ){
 
   Node* initial= read_file("s12a.txt");;
 
