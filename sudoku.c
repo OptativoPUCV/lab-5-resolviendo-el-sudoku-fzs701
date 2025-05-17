@@ -129,7 +129,7 @@ Node* DFS(Node* initial, int* cont){
       if (is_valid(adjNode)){
         push(stack,adjNode);
       } else {
-        free(adjNode)
+        free(adjNode);
       }
       adjNode = next(nodosADJ);
     } 
