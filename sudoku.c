@@ -100,55 +100,27 @@ int is_final(Node* n){
     return 1;
 }
 
-/*Node* DFS(Node* initial, int* cont){
+Node* DFS(Node* initial, int* cont){
   Stack* stack = createStack();
   push(stack,initial);
   *cont = 0;
 
   while(!is_empty(stack)){
-    Node* temp = pop(stack);
+    Node* temp = (Node*)pop(stack);
     (*cont)++;
 
     if(is_final(temp)){
       return temp;
     }
     List* nodosADJ = get_adj_nodes(temp);
-    Node* current;
-    for(current = nodosADJ->first; current != NULL; current = current->next){
-      Node* adjNode = (Node*) current->data;
+    for(List* current = nodosADJ->first; current != NULL; current = current->next){
+      Node* adjNode = current->data->head;
       push(stack,adjNote);
     }
     free(temp);
   }
   return NULL;
-}*/
-Node* DFS(Node* n, int* cont) {
-    Stack* stack = createStack();
-    push(stack, n);  // Iniciar con el nodo inicial
-    *cont = 0;  // Inicializar contador de iteraciones
-
-    while (stack->top != NULL) {  // Comprobamos si la pila no está vacía
-        Node* current = pop(stack);
-        (*cont)++;  // Incrementar el contador de iteraciones
-
-        // Verificar si es el nodo final
-        if (is_final(current)) {
-            return current;  // Nodo final encontrado
-        }
-
-        // Obtener los nodos adyacentes
-        List* adj_nodes = get_adj_nodes(current);
-        for (List* current_adj = adj_nodes; current_adj != NULL; current_adj = current_adj->next) {
-            Node* adj_node = current_adj->head;
-            push(stack, adj_node);
-        }
-
-        free(current);  // Liberar el nodo actual
-    }
-
-    return NULL;  // Si no encontramos la solución
 }
-
 
 
 
