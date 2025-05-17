@@ -662,3 +662,23 @@ sudoku.c:118:13: error: unused variable 'adjNode' [-Werror=unused-variable]
              ^~~~~~~
 cc1.exe: all warnings being treated as errors
 7b74cb9
+Fri, May 16, 2025 11:13:38 PM: 
+ sudoku.c | 27 ++++++++++++++++++++++++++-
+ 1 file changed, 26 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:130:13: error: implicit declaration of function 'isEmpty' [-Werror=implicit-function-declaration]
+     while (!isEmpty(stack)) {
+             ^~~~~~~
+sudoku.c:131:25: error: void value not ignored as it ought to be
+         Node* current = pop(stack);
+                         ^~~
+sudoku.c:141:40: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+         for (Node* adj_node = adj_nodes->head; adj_node != NULL; adj_node = adj_node->next) {
+                                        ^~
+sudoku.c:141:85: error: 'Node {aka struct <anonymous>}' has no member named 'next'
+         for (Node* adj_node = adj_nodes->head; adj_node != NULL; adj_node = adj_node->next) {
+                                                                                     ^~
+cc1.exe: all warnings being treated as errors
+e88895a
