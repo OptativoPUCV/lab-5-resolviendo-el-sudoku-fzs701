@@ -99,8 +99,7 @@ int is_final(Node* n){
   }
     return 1;
 }
-
-Node* DFS(Node* initial, int* cont){
+/*Node* DFS(Node* initial, int* cont){
   Stack* stack = createStack();
   push(stack,initial);
   *cont = 0;
@@ -116,17 +115,42 @@ Node* DFS(Node* initial, int* cont){
     List* nodosADJ = get_adj_nodes(temp);
     for(Node* current = nodosADJ->first; current != NULL; current = current->next){
       //Node* adjNode = (Node*)current->data;
-      push(stack,(Node*)current->data);
+      push(stack,current->data);
     }
     free(temp);
   }
+  return NULL;
+}*/
+Node* DFS(Node* initial, int* cont){
+  Stack* stack = createStack();
+  push(stack,initial);
+  *cont = 0;
+
+  while(!is_empty(stack)){
+    (*cont)++;
+    Node* current = top(stack);
+    pop(stack);
+
+    if(is_final(current)){
+      free(stack);
+      return current;
+    }
+    List* nodosADJ = get_adj_nodes(current);
+    Node* child = first(nodosADJ);
+    while(child != NULL){
+      push(stack,child);
+      child = next(nodosADJ);
+    }
+    free(current);
+  }
+  free(stack);
   return NULL;
 }
 
 
 
 
-/*int main( int argc, char *argv[] ){
+int main( int argc, char *argv[] ){
 
   Node* initial= read_file("s12a.txt");;
 
@@ -136,4 +160,4 @@ Node* DFS(Node* initial, int* cont){
   print_node(final);
 
   return 0;
-}*/
+}

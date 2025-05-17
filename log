@@ -817,3 +817,15 @@ sudoku.c:119:32: error: 'Node {aka struct <anonymous>}' has no member named 'dat
        push(stack,(Node*)current->data);
                                 ^~
 5852eee
+Fri, May 16, 2025 11:36:51 PM: 
+ sudoku.c | 34 +++++++++++++++++++++++++++++-----
+ 1 file changed, 29 insertions(+), 5 deletions(-)
+Compilation failed
+test.c:245:5: error: redefinition of 'main'
+ int main( int argc, char *argv[] ) {
+     ^~~~
+In file included from test.c:5:0:
+sudoku.c:153:5: note: previous definition of 'main' was here
+ int main( int argc, char *argv[] ){
+     ^~~~
+cd12608
