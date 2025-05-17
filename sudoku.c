@@ -117,7 +117,7 @@ Node* DFS(Node* initial, int* cont){
       push(stack,adjNode);
       adjNode = next(nodosADJ);
     }
-    cean(nodosADJ);
+    clean(nodosADJ);
     free(current);
   }
   return NULL;
