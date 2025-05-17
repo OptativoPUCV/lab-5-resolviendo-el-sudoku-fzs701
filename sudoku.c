@@ -102,12 +102,12 @@ int is_final(Node* n){
 
 Node* DFS(Node* initial, int* cont){
   Stack* stack = createStack();
-  push(stack,n);
-  *count = 0;
+  push(stack,initial);
+  *cont = 0;
 
   while(!is_empty(stack)){
     Node* temp = pop(stack);
-    (*count)++;
+    (*cont)++;
 
     if(is_final(temp)){
       return temp;
@@ -116,8 +116,8 @@ Node* DFS(Node* initial, int* cont){
     Node* adjacenteNodo;
     Node* current;
     for(current = nodosADJ->head; current != NULL; current = current->next{
-      nodosADJ = current->data;
-      push(stack,nodosADJ);
+      adjacenteNodo = current->data;
+      push(stack,adjacenteNodo);
     }
     free(temp);
   }
