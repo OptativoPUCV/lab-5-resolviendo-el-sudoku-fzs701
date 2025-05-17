@@ -118,7 +118,6 @@ Node* DFS(Node* initial, int* cont){
       free(stack);
       return current;
     }
-    }
 
     List* nodosADJ = get_adj_nodes(current);
     Node* adjNode = first(nodosADJ);

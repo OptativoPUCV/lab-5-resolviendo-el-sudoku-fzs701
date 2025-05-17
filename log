@@ -1019,3 +1019,9 @@ sudoku.c:132:3: error: control reaches end of non-void function [-Werror=return-
    ^
 cc1.exe: all warnings being treated as errors
 b3c8fa4
+Fri, May 16, 2025 11:59:27 PM: 
+ sudoku.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  6|2
+total_score: 45/70
+3888505
