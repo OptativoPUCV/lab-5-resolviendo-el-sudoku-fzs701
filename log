@@ -545,3 +545,25 @@ sudoku.c:117:13: error: unused variable 'adjNode' [-Werror=unused-variable]
              ^~~~~~~
 cc1.exe: all warnings being treated as errors
 99c2bc7
+Fri, May 16, 2025 11:08:27 PM: 
+ sudoku.c | 31 ++++++++++++++++++++++++++++++-
+ 1 file changed, 30 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:131:22: error: void value not ignored as it ought to be
+         Node* temp = pop(stack);
+                      ^~~
+sudoku.c:143:14: error: unknown type name 'node'
+         for (node* current = nodosADJ->first; current != NULL; current = current->next) {
+              ^~~~
+sudoku.c:143:38: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+         for (node* current = nodosADJ->first; current != NULL; current = current->next) {
+                                      ^~
+sudoku.c:143:81: error: request for member 'next' in something not a structure or union
+         for (node* current = nodosADJ->first; current != NULL; current = current->next) {
+                                                                                 ^~
+sudoku.c:144:44: error: request for member 'data' in something not a structure or union
+             Node* adjNode = (Node*) current->data;  // Obtener el Node* de current->data
+                                            ^~
+ed3623d
