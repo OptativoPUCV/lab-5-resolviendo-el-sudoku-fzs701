@@ -21,3 +21,27 @@ Fri, May 16, 2025  9:49:50 PM:
  tests:  2|4
 total_score: 15/70
 e17a6ef
+Fri, May 16, 2025  9:58:14 PM: 
+ sudoku.c | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'get_adj_nodes':
+sudoku.c:55:17: error: implicit declaration of function 'is_valid' [-Werror=implicit-function-declaration]
+             if (is_valid(newNode)){
+                 ^~~~~~~~
+sudoku.c: In function 'is_valid':
+sudoku.c:73:13: error: unused variable 'num' [-Werror=unused-variable]
+         int num = n->sudo[i][j];
+             ^~~
+sudoku.c:69:28: error: unused variable 'box' [-Werror=unused-variable]
+   int fila[10], colum[10], box[10];
+                            ^~~
+sudoku.c:69:17: error: unused variable 'colum' [-Werror=unused-variable]
+   int fila[10], colum[10], box[10];
+                 ^~~~~
+sudoku.c:69:7: error: unused variable 'fila' [-Werror=unused-variable]
+   int fila[10], colum[10], box[10];
+       ^~~~
+cc1.exe: all warnings being treated as errors
+5f99584
