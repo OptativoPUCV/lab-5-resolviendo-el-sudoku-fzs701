@@ -126,7 +126,11 @@ Node* DFS(Node* initial, int* cont){
     Node* adjNode = first(nodosADJ);
 
     while(adjNode != NULL){
-      push(stack,adjNode);
+      if (is_valid(adjNode)){
+        push(stack,adjNode);
+      } else {
+        free(adjNode)
+      }
       adjNode = next(nodosADJ);
     } 
     free(current);
