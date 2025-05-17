@@ -111,7 +111,7 @@ Node* DFS(Node* initial, int* cont){
     if(is_final(current)){
       return current;
     }
-    List* nodosADJ = get_adj_nodes(temp);
+    List* nodosADJ = get_adj_nodes(current);
     Node* adjNode = front(nodosADJ);
     while(nodosADJ != NULL){
       push(stack,adjNode);
