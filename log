@@ -90,3 +90,14 @@ Fri, May 16, 2025 10:05:27 PM:
  tests:  0|5
 total_score: 0/70
 74003c8
+Fri, May 16, 2025 10:10:31 PM: 
+ sudoku.c | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'is_valid':
+sudoku.c:56:23: error: 'i' undeclared (first use in this function)
+     int num = n->sudo[i][j];
+                       ^
+sudoku.c:56:23: note: each undeclared identifier is reported only once for each function it appears in
+a785630
