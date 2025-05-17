@@ -44,7 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int fila[10] = {0};
+  /*int fila[10] = {0};
   int colum[10] = {0};
   int box[10] = {0};
 
@@ -63,7 +63,7 @@ int is_valid(Node* n){
         box[submatriz] = 1;
       }
     }
-  }
+  }*/
   return 1;
 }
 
@@ -82,6 +82,7 @@ List* get_adj_nodes(Node* n){
               free(newNode);
             }
           }
+          return list;
         }
       }
     }
