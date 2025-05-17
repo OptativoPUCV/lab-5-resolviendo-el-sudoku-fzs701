@@ -853,3 +853,18 @@ sudoku.c:121:5: error: expected ';' before 'free'
      ^~~~
 cc1.exe: all warnings being treated as errors
 5c0fae6
+Fri, May 16, 2025 11:42:51 PM: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:114:36: error: 'temp' undeclared (first use in this function)
+     List* nodosADJ = get_adj_nodes(temp);
+                                    ^~~~
+sudoku.c:114:36: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:120:5: error: implicit declaration of function 'cean' [-Werror=implicit-function-declaration]
+     cean(nodosADJ);
+     ^~~~
+cc1.exe: all warnings being treated as errors
+20d72ef
