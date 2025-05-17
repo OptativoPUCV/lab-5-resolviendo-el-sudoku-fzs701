@@ -785,3 +785,19 @@ sudoku.c:118:13: error: unused variable 'adjNode' [-Werror=unused-variable]
              ^~~~~~~
 cc1.exe: all warnings being treated as errors
 eee7264
+Fri, May 16, 2025 11:25:05 PM: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:117:33: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+     for(Node* current = nodosADJ->first; current != NULL; current = current->next){
+                                 ^~
+sudoku.c:117:76: error: 'Node {aka struct <anonymous>}' has no member named 'next'
+     for(Node* current = nodosADJ->first; current != NULL; current = current->next){
+                                                                            ^~
+sudoku.c:119:25: error: 'Node {aka struct <anonymous>}' has no member named 'data'
+       push(stack,current->data);
+                         ^~
+35d3ee5
