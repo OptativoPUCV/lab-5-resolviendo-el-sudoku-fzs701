@@ -52,6 +52,9 @@ int is_valid(Node* n){
     for(int j = 0; j < 9; j++){
       int num = n->sudo[i][j];
       if(num != 0){
+        if (num < 1 || num > 9) { 
+          return 0;
+        }
         int submatriz = (i / 3) * 3 + (j / 3);
         if(fila[i][num] || colum[j][num] || box[submatriz][num]){
           return 0;
@@ -126,8 +129,8 @@ Node* DFS(Node* initial, int* cont){
       push(stack,adjNode);
       adjNode = next(nodosADJ);
     } 
-    free(nodosADJ);
     free(current);
+    free(nodosADJ);
   }
   free(stack);
   return NULL;
