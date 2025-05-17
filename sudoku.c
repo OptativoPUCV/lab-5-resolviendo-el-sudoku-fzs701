@@ -127,7 +127,7 @@ Node* DFS(Node* n, int* cont) {
     push(stack, n);  // Iniciar con el nodo inicial
     *cont = 0;  // Inicializar contador de iteraciones
 
-    while (!isEmpty(stack)) {
+    while (stack->top != NULL) {  // Comprobamos si la pila no está vacía
         Node* current = pop(stack);
         (*cont)++;  // Incrementar el contador de iteraciones
 
@@ -138,7 +138,8 @@ Node* DFS(Node* n, int* cont) {
 
         // Obtener los nodos adyacentes
         List* adj_nodes = get_adj_nodes(current);
-        for (Node* adj_node = adj_nodes->head; adj_node != NULL; adj_node = adj_node->next) {
+        for (List* current_adj = adj_nodes; current_adj != NULL; current_adj = current_adj->next) {
+            Node* adj_node = current_adj->head;
             push(stack, adj_node);
         }
 
@@ -147,6 +148,7 @@ Node* DFS(Node* n, int* cont) {
 
     return NULL;  // Si no encontramos la solución
 }
+
 
 
 

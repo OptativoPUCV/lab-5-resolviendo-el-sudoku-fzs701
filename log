@@ -682,3 +682,19 @@ sudoku.c:141:85: error: 'Node {aka struct <anonymous>}' has no member named 'nex
                                                                                      ^~
 cc1.exe: all warnings being treated as errors
 e88895a
+Fri, May 16, 2025 11:15:07 PM: 
+ sudoku.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:130:17: error: dereferencing pointer to incomplete type 'Stack {aka struct List}'
+     while (stack->top != NULL) {  // Comprobamos si la pila no está vacía
+                 ^~
+sudoku.c:131:25: error: void value not ignored as it ought to be
+         Node* current = pop(stack);
+                         ^~~
+sudoku.c:141:91: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+         for (List* current_adj = adj_nodes; current_adj != NULL; current_adj = current_adj->next) {
+                                                                                           ^~
+9d46bf4
