@@ -104,7 +104,7 @@ Node* DFS(Node* initial, int* cont){
   push(stack,initial);
 
   while(!is_empty(stack)){
-    Node* current = front(stack);
+    Node* current = (Node*)front(stack);
     pop(stack);
     (*cont)++;
 
@@ -113,7 +113,7 @@ Node* DFS(Node* initial, int* cont){
     }
 
     List* nodosADJ = get_adj_nodes(current);
-    Node* adjNode = front(nodosADJ);
+    Node* adjNode = (Node*)front(nodosADJ);
 
     while(adjNode != NULL){
       if(is_valid(adjNode)){
@@ -122,7 +122,7 @@ Node* DFS(Node* initial, int* cont){
       } else {
         free(adjNode);
       }
-      adjNode = next(nodosADJ);
+      adjNode = (Node*)next(nodosADJ);
     }
     clean(nodosADJ);
     free(current);
