@@ -350,3 +350,25 @@ sudoku.c:116:11: error: unused variable 'adjacenteNodo' [-Werror=unused-variable
            ^~~~~~~~~~~~~
 cc1.exe: all warnings being treated as errors
 21591ba
+Fri, May 16, 2025 10:57:30 PM: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:109:18: error: void value not ignored as it ought to be
+     Node* temp = pop(stack);
+                  ^~~
+sudoku.c:118:33: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+     for(Node* current = nodosADJ->head; current != NULL; current = current->next{
+                                 ^~
+sudoku.c:118:75: error: 'Node {aka struct <anonymous>}' has no member named 'next'
+     for(Node* current = nodosADJ->head; current != NULL; current = current->next{
+                                                                           ^~
+sudoku.c:118:81: error: expected ')' before '{' token
+     for(Node* current = nodosADJ->head; current != NULL; current = current->next{
+                                                                                 ^
+sudoku.c:123:3: error: expected expression before '}' token
+   }
+   ^
+b3f685a
