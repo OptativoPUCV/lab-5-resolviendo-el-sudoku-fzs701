@@ -215,3 +215,30 @@ Fri, May 16, 2025 10:38:13 PM:
  tests:  6|2
 total_score: 45/70
 cb62911
+Fri, May 16, 2025 10:42:50 PM: 
+ sudoku.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:105:14: error: 'n' undeclared (first use in this function)
+   push(stack,n);
+              ^
+sudoku.c:105:14: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:106:4: error: 'count' undeclared (first use in this function)
+   *count = 0;
+    ^~~~~
+sudoku.c:109:18: error: void value not ignored as it ought to be
+     Node* temp = pop(stack);
+                  ^~~
+sudoku.c:118:24: error: implicit declaration of function 'size' [-Werror=implicit-function-declaration]
+     for(int i = 0; i < size(nodosADJ); i++){
+                        ^~~~
+sudoku.c:119:23: error: implicit declaration of function 'getAT' [-Werror=implicit-function-declaration]
+       adjacenteNodo = getAT(nodosADJ,i);
+                       ^~~~~
+sudoku.c:119:21: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+       adjacenteNodo = getAT(nodosADJ,i);
+                     ^
+cc1.exe: all warnings being treated as errors
+d5e3e99

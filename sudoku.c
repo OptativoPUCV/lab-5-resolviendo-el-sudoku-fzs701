@@ -101,6 +101,26 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+  Stack* stack = createStack();
+  push(stack,n);
+  *count = 0;
+
+  while(!is_empty(stack)){
+    Node* temp = pop(stack);
+    (*count)++;
+
+    if(is_final(temp)){
+      return temp;
+    }
+    List* nodosADJ = get_adj_nodes(temp);
+
+    Node* adjacenteNodo;
+    for(int i = 0; i < size(nodosADJ); i++){
+      adjacenteNodo = getAT(nodosADJ,i);
+      push(stack,adjacenteNodo);
+    }
+    free(temp);
+  }
   return NULL;
 }
 
