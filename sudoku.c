@@ -114,8 +114,8 @@ Node* DFS(Node* initial, int* cont){
       return temp;
     }
     List* nodosADJ = get_adj_nodes(temp);
-    for(List* current = nodosADJ; current != NULL; current = current->next){
-      Node* adjNode = current->data->head;
+    for(Node* current = nodosADJ->head; current != NULL; current = current->next){
+      Node* adjNode = (Node*)current->data;
       push(stack,adjNote);
     }
     free(temp);
