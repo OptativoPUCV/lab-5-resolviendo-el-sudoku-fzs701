@@ -123,7 +123,7 @@ Node* DFS(Node* initial, int* cont){
     }
 
     List* nodosADJ = get_adj_nodes(current);
-    Node* adjNode = first(nodosADJ);
+    Node* adjNode = (Node*)first(nodosADJ);
 
     while(adjNode != NULL){
       push(stack,adjNode);
