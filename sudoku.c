@@ -108,38 +108,32 @@ Node* DFS(Node* initial, int* cont){
   *cont = 0;
 
   while(!is_empty(stack)){
-    (*cont)++;
-    Node* current = (Node*)front(stack);
+    Node* current = (Node*)top(stack);
     pop(stack);
+    (*cont)++;
 
     if(is_final(current)){
-      while (!is_empty(stack)) {
-        Node* temp = (Node*)front(stack);
-        pop(stack);
-        free(temp);
-      }
-      free(stack);
       return current;
     }
 
     List* nodosADJ = get_adj_nodes(current);
-    Node* adjNode = (Node*)first(nodosADJ);
-
-    while(adjNode != NULL){
-      push(stack,adjNode);
-      adjNode = (Node*)next(nodosADJ);
-    } 
-    free(nodosADJ);
+    void* nodeData;
+    for(nodeData = first(nodosADJ); nodeData != NULL; nodeData = next(nodosADJ)){
+      Node* nodosADJ = (Node*)nodeData;
+      if(is_valid(nodosADJ)){
+        push(stack,nodosADJ);
+      }
+    }
     free(current);
+    clean(nodosADJ);
   }
-  free(stack);
   return NULL;
 }
 
 
 
 
-int main( int argc, char *argv[] ){
+/*int main( int argc, char *argv[] ){
 
   Node* initial= read_file("s12a.txt");;
 
@@ -149,4 +143,4 @@ int main( int argc, char *argv[] ){
   print_node(final);
 
   return 0;
-}
+}*/
