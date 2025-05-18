@@ -126,13 +126,9 @@ Node* DFS(Node* initial, int* cont){
     Node* adjNode = first(nodosADJ);
 
     while(adjNode != NULL){
-      if (is_valid(adjNode)){
-        Node* copyNode = copy(adjNode);
-        push(stack,copyNode);
-      } else {
-        free(adjNode);
-      }
-      adjNode = next(nodosADJ);
+      Node* copyNode = copy(adjNode);
+      push(stack,copyNode);
+      adjNode = (Node*)next(nodosADJ);
     } 
     free(current);
     free(nodosADJ);
