@@ -1102,3 +1102,19 @@ sudoku.c:160:25: error: 'Node {aka struct <anonymous>}' has no member named 'dat
        push(stack,adjNode->data);
                          ^~
 d5d4e74
+Sat, May 17, 2025 11:43:25 PM: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:159:34: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+     for(Node* adjNode = adj_nodes->first; adjNode != NULL; adjNode = adjNode->next){
+                                  ^~
+sudoku.c:159:77: error: 'Node {aka struct <anonymous>}' has no member named 'next'
+     for(Node* adjNode = adj_nodes->first; adjNode != NULL; adjNode = adjNode->next){
+                                                                             ^~
+sudoku.c:160:25: error: 'Node {aka struct <anonymous>}' has no member named 'data'
+       push(stack,adjNode->data);
+                         ^~
+75267fb
